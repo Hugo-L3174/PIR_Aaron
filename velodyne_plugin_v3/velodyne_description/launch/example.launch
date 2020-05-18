@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <launch>
-  <arg name="paused" default="false"/>
+  <arg name="paused" default="true"/>
   <arg name="use_sim_time" default="true"/>
   <arg name="gui" default="true"/>
   <arg name="headless" default="false"/>
@@ -32,5 +32,10 @@
     <param name="publish_frequency" type="double" value="30.0" />
   </node>
   
+  <!--Teleoperation-->
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop">
+    <!--<remap from="cmd_vel" to="robot0/cmd_vel"/>-->
+  </node>
+
   
 </launch>
